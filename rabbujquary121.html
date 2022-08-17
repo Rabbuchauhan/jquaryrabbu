@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First</title>
+    <script src="C:\Users\HP\Desktop\JQuery\js\jquery-3.6.0.min.js"></script>
+    <style>
+        #plus {
+            height: 60px;
+            width: 60px;
+        }
+        #minus{
+            height: 60px;
+            width: 60px;
+        }
+        
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('p').click(function(){
+                $(this).hide();
+            })
+            $('#rabbu_raja').click(function(){
+                $('#rabburaja').hide();
+            })
+             $('#krabbu_raja').click(function(){
+                 
+                $('#rabburaja').show();
+            })
+            $("#show ").attr("disabled",true)
+            $("#hide").click(function(){
+                if(confirm("are you sure to hide image???"))
+                {
+                    $("#rabburaja").fadeIn(2000);
+                    $(this).attr("disabled",true);
+                    $("#show").attr("disabled",false);
+
+                }
+            })
+            
+            $("#show").click(function(){
+                if(confirm("are you sure to show image???"))
+                {
+                    $("#rabburaja").show(2000);
+                    $(this).attr("disabled",true);
+                    $("#hide").attr("disabled",false);
+
+                }
+            })
+           // $("btn").click(function(){
+             //   if(confirm("Are You Sure???"))
+              //  $("rabburaja").toggle(2000);
+//($(this).text()=="hide")
+               // ?($(this).text("show").)
+
+         //   })
+         $("#hide1").click(function(){
+             $("#rabburaja").toggle(2000);
+         })
+
+         $("#plus").click(function(){
+             var rabburajahw=parseInt($("#rabburaja").css("height"));
+             if(rabburajahw<=2000)
+             {
+                 rabburajahw += 100;
+                 $("#rabburaja").css("height",rabburajahw);
+                 $("#rabburaja").css("width",rabburajahw);
+             }
+             else{
+                 alert("more than 2000px is not possible");
+             }
+         })
+         $("#minus").click(function(){
+             var rabburajahw=parseInt($("#rabburaja").css("height"));
+             if(rabburajahw >=100)
+             {
+                 rabburajahw -= 100;
+                 $("#rabburaja").css("height",rabburajahw);
+                 $("#rabburaja").css("width",rabburajahw);
+             }
+             else{
+                 alert("more than 100px is not possible");
+             }
+         })
+
+        });
+    </script>
+    </head>
+<body>
+    <p>Hello My Name is Chauhan Rabbu</p>
+    <p>Welcome to my JQuery session</p>
+    <p>What's your name</p>
+    <img src="rabburaja.jpeg" alt="" id="rabburaja"><br>
+    <input type="button" value="click here to hide image" id="rabbu_raja">
+    <input type="button" value="click here to show image" id="rabbu_raja"><hr>
+    <input type="button" value="Hide" id="hide"> &nbsp;&nbsp; <input type="button" value="show" id="show"><hr>
+    <input type="button"  id="hide1" value="click here to hide & show"><hr>
+    <button id="plus" >+</button>&nbsp;&nbsp; <button id="minus">-</button>
+
+</body>
+</html>
